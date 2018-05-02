@@ -19,25 +19,26 @@ In order to access the endpoints the following has been created:
 
 ## 1. Login 
  
-`POST http://wsprnet.org/drupal/rest/user/login
- 
-Content Type: application/json
+`POST http://wsprnet.org/drupal/rest/user/login`
+
+Header:
+
+`Content Type: application/json`
  
 Body:
  
-{
-"name": "wsprnet_login"
-"pass": "wsprnet_pass"
-}
-`
+`{`
+`"name": "wsprnet_login"`
+`"pass": "wsprnet_pass"`
+`}`
  
  
 ## 2. Sesssion Cookie
  
 Login will return a JSON body. In it find these properties:
  
-`"sessid": "e8T0xDx-FkgT-Cwd6FPjdWaZqGxi8GXLFm1rPdSWI9Q", 
- "session_name": "SESS70f94c916a4e1b4938c6d4158a067062"`
+`"sessid": "e8T0xDx-FkgT-Cwd6FPjdWaZqGxi8GXLFm1rPdSWI9Q"`
+`"session_name": "SESS70f94c916a4e1b4938c6d4158a067062"`
  
 Going forward add the header:
  
