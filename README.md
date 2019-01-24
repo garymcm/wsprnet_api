@@ -23,7 +23,7 @@ In order to access the endpoints the following has been created:
 
 Header:
 
-`Content Type: application/json`
+`Content-Type: application/json`
  
 Body:
  
