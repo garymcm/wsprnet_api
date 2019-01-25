@@ -9,8 +9,6 @@ Three endpoints are provided: two for spots and one for statuses. A status recor
 * `http://wsprnet.org/drupal/wsprnet/paths/json`
 * `http://wsprnet.org/drupal/wsprnet/status/json`
 
-Parameters are the same as the map page form and I'll list them here soon.
- 
 # API Parameters
 
 The following table shows the parameters enabled on a specific endpoint. Parameters can be passed via GET or POST. Values in parentheses are defaults.
