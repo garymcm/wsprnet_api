@@ -13,11 +13,13 @@ Three endpoints are provided: two for spots and one for statuses. A status recor
 
 The following table shows the parameters enabled on a specific endpoint. Parameters can be passed via GET or POST. Values in parentheses are defaults.
 
-| Endpoint | spotnum_start | band (30m) | minutes (10) | callsign | reporter | exclude_special |
+| Endpoint | spotnum_start | band (30m) | minutes (1) | callsign | reporter | exclude_special |
 | ---------| :-----------: | :--: | :-----: | :------: | :------: | :-------------: |
 | wsprnet/spots/json| X | X | X | X | X| X |
 | wsprnet/paths/json |   | X | X | X | | X |
 | wsprnet/status/json |   | X | X | X | | X |
+
+spotnum_start - returns values greater than the passed value
 
 # Band Values
 
