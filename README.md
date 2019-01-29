@@ -2,24 +2,36 @@
 
 At this point in time the API is invite only. Please send me a note if you want to be included. There are some infrastructure concerns that we need  to deal with before we open this up.
 
+# Good citizenship
+- Please take the minimal amount data you need.
+- If you want a full feed of every spot **DO NOT USE THIS API**. We  will work directly with sites for peering arrangements, so please reach out to the admins.
+
 # Endpoints
-Three endpoints are provided: two for spots and one for statuses. A status record is the frequency, TX % data you see on the map when the station has no spots and comes from the WSPRNet client each user runs
+Three endpoints are provided:
 
 * `http://wsprnet.org/drupal/wsprnet/spots/json`
 * `http://wsprnet.org/drupal/wsprnet/paths/json`
 * `http://wsprnet.org/drupal/wsprnet/status/json`
 
+- **spots** - Returns all spots, unsummarized.
+- **paths** - Returns one spot per `Call`, `Reporter`, `Call Grid`, `Reporter Grid`. This is exactly what the map query renders.
+- **status** - Stations occasionally upload their status, which includes band and TX %. This API returns the recent statuses.
+
 # API Parameters
+The following table shows the parameters enabled on a specific endpoint. Parameters can be passed via GET or POST. All parameters are optional, but please note the values in parentheses are defaults.
 
-The following table shows the parameters enabled on a specific endpoint. Parameters can be passed via GET or POST. Values in parentheses are defaults.
-
-| Endpoint | spotnum_start | band (30m) | minutes (1) | callsign | reporter | exclude_special |
+| Endpoint | spotnum_start | band (30m) | minutes (4) | callsign | reporter | exclude_special (1) |
 | ---------| :-----------: | :--: | :-----: | :------: | :------: | :-------------: |
 | wsprnet/spots/json| X | X | X | X | X| X |
 | wsprnet/paths/json |   | X | X | X | | X |
 | wsprnet/status/json |   | X | X | X | | X |
 
-spotnum_start - returns values greater than the passed value
+- **spotnum_start** - each spot gets a unique id. The API returns spots **greater than** the passed value.
+- **band** - see 'Band Values' below
+- **minutes** - number of minutes to retrieve. Only 24 hours of spots are available from this API. Note that spots are timestamped with 2 minute cycle they were decoded, so it really only makes sense to ask for minutes more than 4 and in multiples of 2.
+- **callsign** - filters by the Transmitting station's call sign.
+- **reporter** - filters by the Reporting Station's call sing.
+- **exclude_special** - 0 or 1. Excludes balloon station telemetry call signs.
 
 # Band Values
 
