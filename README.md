@@ -3,6 +3,7 @@
 At this point in time the API is invite only. Please send me a note if you want to be included. There are some infrastructure concerns that we need  to deal with before we open this up.
 
 # Good citizenship
+- Do not request the same query more frequently than every 2 minutes.
 - Please take the minimal amount data you need.
 - If you want a full feed of every spot **DO NOT USE THIS API**. We  will work directly with sites for peering arrangements, so please reach out to the admins.
 
@@ -35,7 +36,7 @@ The following table shows the parameters enabled on a specific endpoint. Paramet
 
 <sup>1</sup> Spots are timestamped with the --start-- of 2 minute cycle they were decoded, e.g. xx:00, xx:02 etc. So at any instant the database will be populated with spots from 2 cycles back, i.e. Now - 4 minutes.
 
-<sup>2</sup> When the Call and Reporter call signs are identical, then the results will include Spots where Call **or** Reporter match;otherwise, it's where Call **and**  Reporter match.
+<sup>2</sup> When the Call and Reporter call signs are identical, then the results will include Spots where Call **or** Reporter match; otherwise, it's where Call **and**  Reporter match.
 
 # Band Values
 
@@ -59,6 +60,98 @@ The following table shows the parameters enabled on a specific endpoint. Paramet
 | 432 | 70cm|
 | 1296 | 23cm|
 | ALL | All bands |
+
+# Sample Output
+## Spots
+```json
+[
+    {
+        "Spotnum": "1451509949",
+        "Date": "1548761280",
+        "Reporter": "AE2EA",
+        "ReporterGrid": "FN12fr",
+        "dB": "-12",
+        "MHz": "0.475674",
+        "CallSign": "AA1A",
+        "Grid": "FN42pb",
+        "Power": "30",
+        "Drift": "0",
+        "distance": "566",
+        "azimuth": "280",
+        "Band": "0",
+        "version": "4.0 r4889",
+        "code": "0"
+    },
+    {
+        "Spotnum": "1451509948",
+        "Date": "1548761280",
+        "Reporter": "F5VBD",
+        "ReporterGrid": "JN25xo",
+        "dB": "-15",
+        "MHz": "10.140152",
+        "CallSign": "2E0XVX",
+        "Grid": "IO92ml",
+        "Power": "23",
+        "Drift": "0",
+        "distance": "915",
+        "azimuth": "144",
+        "Band": "10",
+        "version": "1.3 Kiwi",
+        "code": "0"
+    }
+]
+```
+## Paths
+```json
+[
+    {
+        "CallSign": "UR5MLG",
+        "Reporter": "DK0ABT",
+        "distance": "2139",
+        "Grid": "KN99",
+        "ReporterGrid": "JN49pb"
+    },
+    {
+        "CallSign": "MW0CWF",
+        "Reporter": "DK0ABT",
+        "distance": "932",
+        "Grid": "IO81ik",
+        "ReporterGrid": "JN49pb"
+    }
+]
+```
+## Statuses
+```json
+[
+    {
+        "callsign": "AE0CV",
+        "grid": "DM79",
+        "rx": "10.140200",
+        "tx": "10.140200",
+        "tpct": "0",
+        "dbm": "37",
+        "band": "10"
+    },
+    {
+        "callsign": "BM4AIK",
+        "grid": "PL02DP",
+        "rx": "10.140180",
+        "tx": "10.140200",
+        "tpct": "0",
+        "dbm": "0",
+        "band": "10"
+    },
+    {
+        "callsign": "DC6EB",
+        "grid": "JN49",
+        "rx": "10.140200",
+        "tx": "10.140200",
+        "tpct": "0",
+        "dbm": "37",
+        "band": "10"
+    }
+]
+```
 
 # Session Management
  
