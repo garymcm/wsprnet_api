@@ -26,14 +26,16 @@ The following table shows the parameters enabled on a specific endpoint. Paramet
 | wsprnet/paths/json |   | X | X | X | | X |
 | wsprnet/status/json |   | X | X | X | | X |
 
-- **spotnum_start** - each spot gets a unique id. The API returns spots **greater than** the passed value.
+- **spotnum_start** - each Spot gets a Unique ID. The API returns spots **greater than** the passed value.
 - **band** - see 'Band Values' below
-- **minutes** - number of minutes to retrieve. 24 hours of spots are available from this API. Should be an even number<sup>1</sup>.
-- **callsign** - filters by the Transmitting station's call sign.
-- **reporter** - filters by the Reporting Station's call sing.
+- **minutes** - number of minutes to retrieve. 24 hours of Spots are available from this API. Should be an even number<sup>1</sup>.
+- **callsign** - filters by the Transmitting Station's call sign.
+- **reporter** - filters by the Reporting Station's call sign<sup>2</sup>.
 - **exclude_special** - 0 or 1. Excludes balloon station telemetry call signs.
 
 <sup>1</sup> Spots are timestamped with the --start-- of 2 minute cycle they were decoded, e.g. xx:00, xx:02 etc. So at any instant the database will be populated with spots from 2 cycles back, i.e. Now - 4 minutes.
+
+<sup>2</sup> When the Call and Reporter call signs are identical, then the results will include Spots where Call **or** Reporter match;otherwise, it's where Call **and**  Reporter match.
 
 # Band Values
 
