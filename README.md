@@ -4,7 +4,8 @@ At this point in time the API is invite only. Please send me a note if you want 
 
 # Good citizenship
 - Do not request the same query more frequently than every 2 minutes.
-- Please take the minimal amount data you need.
+- Avoid the 2 minute boundaries, since that's when the user uploads all hit, and the server is busiest.
+- Always take the minimal amount data you need.
 - If you want a full feed of every spot **DO NOT USE THIS API**. We  will work directly with sites for peering arrangements, so please reach out to the admins.
 
 # Endpoints
