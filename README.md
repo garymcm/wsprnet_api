@@ -35,7 +35,7 @@ The following table shows the parameters enabled on a specific endpoint. Paramet
 - **reporter** - filters by the Reporting Station's call sign<sup>2</sup>.
 - **exclude_special** - 0 or 1. Excludes balloon station telemetry call signs.
 
-<sup>1</sup> Spots are timestamped with the __start__ of the 2 minute cycle they were decoded, i.e. xx:00, xx:02 etc. So at any instant the database will be populated with spots from 2 cycles back, i.e. -4 minutes for now.
+<sup>1</sup> Spots are timestamped with the __start__ of the 2 minute cycle they were decoded, i.e. xx:00, xx:02 etc. So at any instant the database will be populated with spots from 2 cycles back, i.e. -4 minutes from now.
 
 <sup>2</sup> When the Call and Reporter call signs are identical, then the results will include Spots where Call **or** Reporter match; otherwise, it's where Call **and**  Reporter match.
 
