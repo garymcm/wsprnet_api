@@ -35,7 +35,7 @@ The following table shows the parameters enabled on a specific endpoint. Paramet
 - **reporter** - filters by the Reporting Station's call sign<sup>2</sup>.
 - **exclude_special** - 0 or 1. Excludes balloon station telemetry call signs.
 
-<sup>1</sup> Spots are timestamped with the __start__ of the 2 minute cycle they were decoded, i.e. xx:00, xx:02 etc. So at any instant the database will be populated with spots from 2 cycles back, i.e. -4 minutes from now.
+<sup>1</sup> Spots are timestamped with the __start__ of the 2 minute cycle they were decoded, i.e. xx:00, xx:02 etc. So at any instant the database will be populated with spots from 2 cycles back, i.e. -4 minutes from the current time.
 
 <sup>2</sup> When the Call and Reporter call signs are identical, then the results will include Spots where Call **or** Reporter match; otherwise, it's where Call **and**  Reporter match.
 
@@ -184,7 +184,7 @@ Login will return a JSON body. In it find these properties:
  
 Going forward add the header:
  
-`Cookie: SESS70f94c916a4e1b4938c6d4158a067062=e8T0xDx-FkgT-Cwd6FPjdWaZqGxi8GXLFm1rPdSWI9Q`
+`Cookie: SESS70f94c916a4e1b4938c6d4158a067062=e8T0xDx-FkgT-Cwd6FPjdWaZqGxi8GXLFm1rPdSWI9Q`  
  
 i.e. Cookie: {sesssion_name}={sessid}
  
@@ -193,7 +193,8 @@ i.e. Cookie: {sesssion_name}={sessid}
 Headers:
  
 `X-CSRF-Token: {token from step 2 above}`  
-`Cookie:{from step 2} Content-Type:application/json`  
+`Cookie: {from step 2}`   
+`Content-Type: application/json`  
 
 then:
 
