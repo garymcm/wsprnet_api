@@ -168,19 +168,19 @@ Header:
  
 Body:
  
-`{`
-`"name": "wsprnet_login"`
-`"pass": "wsprnet_pass"`
-`}`
+`{`  
+`"name": "wsprnet_login"`  
+`"pass": "wsprnet_pass"`  
+`}`  
  
  
 ## 2. Sesssion Cookie
  
 Login will return a JSON body. In it find these properties:
  
-`"sessid": "e8T0xDx-FkgT-Cwd6FPjdWaZqGxi8GXLFm1rPdSWI9Q"`
-`"session_name": "SESS70f94c916a4e1b4938c6d4158a067062"`
-`"token": "DYjQo4GYmnT9NHELLxe5efARQ0yfZByr0DY5VC94cUM"`
+`"sessid": "e8T0xDx-FkgT-Cwd6FPjdWaZqGxi8GXLFm1rPdSWI9Q"`  
+`"session_name": "SESS70f94c916a4e1b4938c6d4158a067062"`  
+`"token": "DYjQo4GYmnT9NHELLxe5efARQ0yfZByr0DY5VC94cUM"`  
  
 Going forward add the header:
  
@@ -192,8 +192,8 @@ i.e. Cookie: {sesssion_name}={sessid}
 
 Headers:
  
-`X-CSRF-Token: {token from step 2 above}`
-`Cookie:{from step 2} Content-Type:application/json`
+`X-CSRF-Token: {token from step 2 above}`  
+`Cookie:{from step 2} Content-Type:application/json`  
 
 then:
 
