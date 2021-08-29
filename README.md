@@ -11,9 +11,9 @@ At this point in time the API is invite only. Please send me a note if you want 
 # Endpoints
 Three endpoints are provided:
 
-* `http://wsprnet.org/drupal/wsprnet/spots/json`
-* `http://wsprnet.org/drupal/wsprnet/paths/json`
-* `http://wsprnet.org/drupal/wsprnet/status/json`
+* `https://www.wsprnet.org/drupal/wsprnet/spots/json`
+* `https://www.wsprnet.org/drupal/wsprnet/paths/json`
+* `https://www.wsprnet.org/drupal/wsprnet/status/json`
 
 - **spots** - Returns all spots, unsummarized.
 - **paths** - Returns one spot per `Call`, `Reporter`, `Call Grid`, `Reporter Grid`. This is exactly what the map query renders.
@@ -160,7 +160,7 @@ In order to access the endpoints the following has been created:
 
 ## 1. Login 
  
-`POST http://wsprnet.org/drupal/rest/user/login`
+`POST https://www.wsprnet.org/drupal/rest/user/login`
 
 Header:
 
@@ -198,4 +198,4 @@ Headers:
 
 then:
 
-`POST http://wsprnet.org/drupal/rest/user/logout.json`
+`POST https://www.wsprnet.org/drupal/rest/user/logout.json`
