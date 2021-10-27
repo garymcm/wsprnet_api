@@ -60,7 +60,7 @@ The following table shows the parameters enabled on a specific endpoint. Paramet
 | 144 | 2m|
 | 432 | 70cm|
 | 1296 | 23cm|
-| ALL | All bands |
+| All | All bands |
 
 # Sample Output
 ## Spots
