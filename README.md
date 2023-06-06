@@ -40,7 +40,7 @@ The following table shows the parameters enabled on a specific endpoint. Paramet
 <sup>2</sup> When the Call and Reporter call signs are identical, then the results will include Spots where Call **or** Reporter match; otherwise, it's where Call **and**  Reporter match.
 
 # Band Values
-
+Note: The WSPRNet ingress process takes the reported frequency and applies `Math.floor()` then stores the resultant integer in the `band` field (unless the reported frequency is less than `0.25 Mhz` (LF), which is recorded as `-1`). So any missing band(s) in the list can still be retrieved. However, we appreciate PRs to keep list up to date.
 | Band | `band` parameter |
 | :--: | ---------------- |
 | -1 | LF|
@@ -55,6 +55,7 @@ The following table shows the parameters enabled on a specific endpoint. Paramet
 | 21 | 15m|
 |	 24 | 12m|
 | 28 | 10m|
+| 40 | 8m|
 | 50 | 6m|
 | 70 | 4m|
 | 144 | 2m|
