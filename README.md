@@ -63,6 +63,16 @@ Note: The WSPRNet ingress process takes the reported frequency and applies `Math
 | 1296 | 23cm|
 | All | All bands |
 
+# Modes (code field)
+The Mode being used on WSJT-x is stored in the `code` field. It decodes as follows:
+  | Code | Mode |
+  | :--: | ----------- |
+  | -1   | Unknown |
+  | 1    | WSPR-2     |
+  | 2    | FST4W-900 / WSPR-15 |
+  | 3    | FST4W-120   |
+  | 4    | FST4W-300 |
+  | 8    | FST4W-1800 |
 # Sample Output
 ## Spots
 ```json
@@ -154,7 +164,6 @@ Note: The WSPRNet ingress process takes the reported frequency and applies `Math
     }
 ]
 ```
-
 # Session Management
  
 In order to access the endpoints the following has been created:
