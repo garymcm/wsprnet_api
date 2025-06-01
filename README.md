@@ -1,24 +1,18 @@
 # wsprnet_api - Documentation for using the API
-
-At this point in time the API is invite only. Please send me a note if you want to be included. There are some infrastructure concerns that we need  to deal with before we open this up.
-
+If you wish to access this API, please get in touch with [Bruce](mailto:bruce@w1bw.us), the WSPRNet custodian.
 # Good citizenship
 - Do not request the same query more frequently than every 2 minutes.
-- Avoid the 2 minute boundaries, since that's when the user uploads all hit, and the server is busiest.
-- Always take the minimal amount data you need.
-- If you want a full feed of every spot **DO NOT USE THIS API**. We  will work directly with sites for peering arrangements, so please reach out to the admins.
-
+- Avoid the 2-minute boundaries, since that's when the user uploads all hits, and the server is busiest.
+- Always take the minimal amount of data you need.
 # Endpoints
 Three endpoints are provided:
-
 * `https://www.wsprnet.org/drupal/wsprnet/spots/json`
 * `https://www.wsprnet.org/drupal/wsprnet/paths/json`
 * `https://www.wsprnet.org/drupal/wsprnet/status/json`
 
 - **spots** - Returns all spots, unsummarized.
-- **paths** - Returns one spot per `Call`, `Reporter`, `Call Grid`, `Reporter Grid`. This is exactly what the map query renders.
-- **status** - Stations occasionally upload their status, which includes band and TX %. This API returns the recent statuses.
-
+- **paths** - Returns one spot per `Call`, `Reporter`, `Call Grid`, `Reporter Grid`. This is precisely what the map query renders.
+- **status** - Stations occasionally upload their status, which includes band and TX%. This API returns the recent statuses.
 # API Parameters
 The following table shows the parameters enabled on a specific endpoint. Parameters can be passed via GET or POST. All parameters are optional, but please note the values in parentheses are defaults.
 
@@ -35,7 +29,7 @@ The following table shows the parameters enabled on a specific endpoint. Paramet
 - **reporter** - filters by the Reporting Station's call sign<sup>2</sup>.
 - **exclude_special** - 0 or 1. Excludes balloon station telemetry call signs.
 
-<sup>1</sup> Spots are timestamped with the __start__ of the 2 minute cycle they were decoded, i.e. xx:00, xx:02 etc. So at any instant the database will be populated with spots from 2 cycles back, i.e. -4 minutes from the current time.
+<sup>1</sup> Spots are timestamped with the __start__ of the 2 minute cycle they were decoded, i.e. xx:00, xx:02 etc. At any instant, the database will be populated with spots from two cycles back, i.e., 4 minutes prior to the current time.
 
 <sup>2</sup> When the Call and Reporter call signs are identical, then the results will include Spots where Call **or** Reporter match; otherwise, it's where Call **and**  Reporter match.
 
@@ -184,7 +178,7 @@ Body:
 `}`  
  
  
-## 2. Sesssion Cookie
+## 2. Session Cookie
  
 Login will return a JSON body. In it find these properties:
  
@@ -192,7 +186,7 @@ Login will return a JSON body. In it find these properties:
 `"session_name": "SESS70f94c916a4e1b4938c6d4158a067062"`  
 `"token": "DYjQo4GYmnT9NHELLxe5efARQ0yfZByr0DY5VC94cUM"`  
  
-Going forward add the header:
+Going forward, add the header:
  
 `Cookie: SESS70f94c916a4e1b4938c6d4158a067062=e8T0xDx-FkgT-Cwd6FPjdWaZqGxi8GXLFm1rPdSWI9Q`  
  
@@ -206,6 +200,6 @@ Headers:
 `Cookie: {from step 2}`   
 `Content-Type: application/json`  
 
-then:
+Then:
 
 `POST https://www.wsprnet.org/drupal/rest/user/logout.json`
